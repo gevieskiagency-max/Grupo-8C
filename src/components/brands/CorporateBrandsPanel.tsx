@@ -18,19 +18,19 @@ export const CorporateBrandsPanel: React.FC<CorporateBrandsPanelProps> = ({
     <div className="w-full">
       {/* Controls / View Mode Switcher */}
       {showPanelToggle && (
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-4 border-b border-neutral-200/60 dark:border-white/10">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-4 border-b border-neutral-200/60 dark:border-white/10">
           <div className="flex items-center gap-2">
             <span className="inline-block w-2 h-2 rounded-full bg-[#DFBD69]" />
-            <span className="text-[11px] font-sans font-semibold tracking-[0.2em] text-[#DFBD69] uppercase">
+            <span className="text-[10.5px] sm:text-[11px] font-sans font-semibold tracking-[0.2em] text-[#DFBD69] uppercase">
               Painel Corporativo de Marcas Globais
             </span>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <button
               type="button"
               onClick={() => setActiveTab('cards')}
-              className={`px-3.5 py-1.5 text-xs font-sans font-medium rounded transition-all ${
+              className={`min-h-[40px] px-3.5 py-2 text-xs font-sans font-medium rounded transition-all cursor-pointer ${
                 activeTab === 'cards'
                   ? 'bg-[#181B1F] text-white border border-[#DFBD69]/40 shadow-sm'
                   : 'text-neutral-400 hover:text-white hover:bg-neutral-800/60'
@@ -41,7 +41,7 @@ export const CorporateBrandsPanel: React.FC<CorporateBrandsPanelProps> = ({
             <button
               type="button"
               onClick={() => setActiveTab('panel')}
-              className={`px-3.5 py-1.5 text-xs font-sans font-medium rounded transition-all ${
+              className={`min-h-[40px] px-3.5 py-2 text-xs font-sans font-medium rounded transition-all cursor-pointer ${
                 activeTab === 'panel'
                   ? 'bg-[#181B1F] text-white border border-[#DFBD69]/40 shadow-sm'
                   : 'text-neutral-400 hover:text-white hover:bg-neutral-800/60'
@@ -52,7 +52,7 @@ export const CorporateBrandsPanel: React.FC<CorporateBrandsPanelProps> = ({
             <button
               type="button"
               onClick={() => setIsModalOpen(true)}
-              className="p-1.5 text-neutral-400 hover:text-white hover:bg-neutral-800/60 rounded transition-colors ml-1"
+              className="min-h-[40px] min-w-[40px] flex items-center justify-center p-2 text-neutral-400 hover:text-white hover:bg-neutral-800/60 rounded transition-colors ml-auto sm:ml-1 cursor-pointer"
               title="Expandir Painel em Tela Cheia"
               aria-label="Expandir Painel Corporativo de Marcas Globais"
             >
@@ -64,7 +64,7 @@ export const CorporateBrandsPanel: React.FC<CorporateBrandsPanelProps> = ({
 
       {/* VIEW 1: Interactive Cards with Authentic Original Logos */}
       {activeTab === 'cards' && (
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-4 lg:gap-5">
+        <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-4 lg:gap-5">
           {GLOBAL_BRANDS.map((brand: BrandItem) => (
             <div
               key={brand.id}

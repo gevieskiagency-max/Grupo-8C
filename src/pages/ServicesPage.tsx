@@ -47,14 +47,14 @@ export const ServicesPage: React.FC = () => {
           </div>
 
           {/* 4 Pillars Grid with Hairline Dividers & Gold Accents */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-[#E5E3DC] border-t border-b border-[#E5E3DC] bg-white rounded-[2px] shadow-[0_4px_24px_rgba(0,0,0,0.02)]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[#E5E3DC] border border-[#E5E3DC] rounded-[2px] overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.02)]">
             {PILLARS_CONTENT.items.map((item, idx) => (
               <div 
                 key={item.pilar}
-                className="py-12 px-8 flex flex-col justify-between group transition-colors hover:bg-[#FAF9F6]"
+                className="bg-white p-6 sm:p-8 lg:p-10 flex flex-col justify-between group transition-colors hover:bg-[#FAF9F6]"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center justify-between mb-6 sm:mb-8">
                     <span className="font-mono text-xs font-semibold text-[#DFBD69]">
                       0{idx + 1}
                     </span>
@@ -83,7 +83,7 @@ export const ServicesPage: React.FC = () => {
       {/* 3. Featured Gateway to AZA Partners Global Alliance */}
       <section className="py-20 md:py-28 bg-[#0B0D0E] text-white border-b border-white/10 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="relative overflow-hidden rounded-[2px] border border-white/15 p-10 sm:p-14 lg:p-16 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 shadow-2xl group">
+          <div className="relative overflow-hidden rounded-[2px] border border-white/15 p-6 sm:p-10 md:p-14 lg:p-16 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 sm:gap-10 shadow-2xl group">
             {/* Background Image with Cinematic Luxury Overlays */}
             <div className="absolute inset-0 z-0">
               <img
@@ -121,10 +121,10 @@ export const ServicesPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="relative z-10 shrink-0">
+            <div className="relative z-10 shrink-0 w-full lg:w-auto">
               <Link
                 to="/atuacao/aza-partners"
-                className="inline-flex items-center gap-3 px-8 py-4 text-xs font-sans font-semibold uppercase tracking-[0.16em] text-[#0B0D0E] bg-gradient-to-r from-[#DFBD69] via-[#E8CD82] to-[#C29B38] hover:from-[#ebd59b] hover:to-[#d4ae48] transition-all rounded-[2px] shadow-[0_4px_25px_rgba(223,189,105,0.3)] hover:shadow-[0_4px_30px_rgba(223,189,105,0.45)] group/btn"
+                className="inline-flex items-center justify-center w-full lg:w-auto gap-3 px-8 py-4 text-xs font-sans font-semibold uppercase tracking-[0.16em] text-[#0B0D0E] bg-gradient-to-r from-[#DFBD69] via-[#E8CD82] to-[#C29B38] hover:from-[#ebd59b] hover:to-[#d4ae48] transition-all rounded-[2px] shadow-[0_4px_25px_rgba(223,189,105,0.3)] hover:shadow-[0_4px_30px_rgba(223,189,105,0.45)] group/btn min-h-[48px]"
               >
                 <span>ACESSAR ALIANÇA AZA PARTNERS</span>
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />

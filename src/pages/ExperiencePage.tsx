@@ -44,14 +44,14 @@ export const ExperiencePage: React.FC = () => {
       <section className="py-24 md:py-36 bg-[#0B0D0E] text-white border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           
-          <div className="p-10 md:p-16 bg-neutral-900/60 border-l-2 border-[#DFBD69] border-t border-r border-b border-white/10 rounded-[2px] shadow-2xl">
+          <div className="p-6 sm:p-10 md:p-16 bg-neutral-900/60 border-l-2 border-[#DFBD69] border-t border-r border-b border-white/10 rounded-[2px] shadow-2xl">
             <span className="text-[10px] uppercase font-sans font-semibold tracking-[0.22em] text-[#DFBD69] block mb-4">
               PRINCÍPIO DE CREDIBILIDADE
             </span>
-            <p className="font-serif italic text-2xl sm:text-3xl md:text-4xl text-white leading-relaxed max-w-4xl font-light">
+            <p className="font-serif italic text-xl sm:text-3xl md:text-4xl text-white leading-relaxed max-w-4xl font-light">
               {EXPERIENCE_CONTENT.highlightQuote}
             </p>
-            <div className="mt-8 pt-6 border-t border-white/10 flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-neutral-400 font-sans">
+            <div className="mt-6 sm:mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center gap-2.5 sm:gap-3 text-[11px] sm:text-xs uppercase tracking-[0.18em] sm:tracking-[0.2em] text-neutral-400 font-sans">
               <span>SOLIDEZ DE HISTÓRICO</span>
               <span aria-hidden="true" className="text-white/20">·</span>
               <span>LIDERANÇA EM GRANDES OPERAÇÕES</span>
@@ -89,7 +89,7 @@ export const ExperiencePage: React.FC = () => {
           </div>
 
           {/* Strict Compliance Governance Disclaimer */}
-          <div className="mt-14 text-xs text-neutral-400 font-sans leading-relaxed border-t border-white/10 pt-6 flex items-start gap-2.5">
+          <div className="mt-14 text-xs text-neutral-400 font-sans leading-relaxed border-t border-white/10 pt-6 flex flex-col sm:flex-row items-start gap-1 sm:gap-2.5">
             <span className="font-semibold text-white shrink-0">Nota Institucional de Governança:</span>
             <span className="font-light">
               {EXPERIENCE_CONTENT.disclaimer}

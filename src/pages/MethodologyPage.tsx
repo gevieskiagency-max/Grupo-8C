@@ -53,11 +53,11 @@ export const MethodologyPage: React.FC = () => {
           </div>
 
           {/* 8 Principles Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 border-t border-white/10 pt-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 border-t border-white/10 pt-10 sm:pt-16">
             {METHODOLOGY_CONTENT.principles.map((p) => (
               <div 
                 key={p.number}
-                className="p-8 sm:p-10 bg-neutral-900/60 border border-white/10 rounded-[2px] flex flex-col justify-start hover:border-[#DFBD69]/60 transition-all group"
+                className="p-6 sm:p-8 md:p-10 bg-neutral-900/60 border border-white/10 rounded-[2px] flex flex-col justify-start hover:border-[#DFBD69]/60 transition-all group"
               >
                 <div className="flex items-baseline gap-3 mb-4">
                   <span className="font-mono text-xs font-semibold text-[#DFBD69]">

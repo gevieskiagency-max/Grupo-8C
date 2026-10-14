@@ -10,14 +10,14 @@ export const HomePage: React.FC = () => {
   return (
     <InstitutionalLayout showFooter={false}>
       <section 
-        className="relative w-full min-h-screen flex items-center overflow-hidden bg-[#0B0D0E] text-white pt-20 pb-12 lg:py-0"
+        className="relative w-full min-h-[100svh] lg:min-h-screen flex items-center overflow-hidden bg-[#0B0D0E] text-white pt-24 pb-12 sm:pt-28 md:pt-20 lg:py-0"
       >
         {/* 1. Cinematic Background Image - Preserved Official Asset */}
         <div className="absolute inset-0 z-0">
           <img
             src={heroBackground}
             alt="8C Inve$t - Horizonte Financeiro Internacional e Escultura em Fita Dourada"
-            className="w-full h-full object-cover object-[70%_center] lg:object-[80%_center] scale-100 transition-transform duration-1000 ease-out"
+            className="w-full h-full object-cover object-[70%_center] sm:object-[75%_center] lg:object-[80%_center] scale-100 transition-transform duration-1000 ease-out"
             referrerPolicy="no-referrer"
             loading="eager"
           />
@@ -29,22 +29,22 @@ export const HomePage: React.FC = () => {
         </div>
 
         {/* 3. Hero Content Container */}
-        <div className="relative z-10 max-w-7xl w-full mx-auto px-6 lg:px-12 py-12 lg:py-24">
+        <div className="relative z-10 max-w-7xl w-full mx-auto px-5 sm:px-6 lg:px-12 py-8 sm:py-12 lg:py-24">
           <div className="max-w-2xl lg:max-w-3xl">
             
             {/* Eyebrow and Exclusivity Label */}
-            <div className="inline-flex items-center gap-3 mb-6 px-3.5 py-1.5 rounded-[2px] bg-black/40 backdrop-blur-md border border-white/10">
-              <span className="font-sans font-semibold text-[#DFBD69] tracking-[0.22em] text-[10.5px] uppercase">
+            <div className="inline-flex items-center gap-2.5 sm:gap-3 mb-5 sm:mb-6 px-3 py-1.5 sm:px-3.5 rounded-[2px] bg-black/50 backdrop-blur-md border border-white/10">
+              <span className="font-sans font-semibold text-[#DFBD69] tracking-[0.2em] sm:tracking-[0.22em] text-[9.5px] sm:text-[10.5px] uppercase">
                 {HERO_CONTENT.eyebrow}
               </span>
               <span aria-hidden="true" className="text-white/30 text-xs">·</span>
-              <span className="font-sans text-[10px] uppercase tracking-[0.2em] text-neutral-300">
+              <span className="font-sans text-[9px] sm:text-[10px] uppercase tracking-[0.18em] sm:tracking-[0.2em] text-neutral-300">
                 {HERO_CONTENT.badgeLabel}
               </span>
             </div>
 
             {/* Main Cinematic Headline */}
-            <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-medium leading-[1.06] tracking-tight text-white mb-8 [text-wrap:balance]">
+            <h1 className="font-serif text-[32px] xs:text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-medium leading-[1.08] sm:leading-[1.06] tracking-tight text-white mb-6 sm:mb-8 [text-wrap:balance]">
               Capital inteligente <br />
               <span className="italic font-normal bg-gradient-to-r from-[#DFBD69] via-[#F3E3B6] to-[#C29B38] bg-clip-text text-transparent">
                 para transformar
@@ -53,29 +53,29 @@ export const HomePage: React.FC = () => {
             </h1>
 
             {/* Institutional Description */}
-            <p className="font-sans text-base sm:text-lg md:text-xl text-neutral-200/90 leading-relaxed max-w-2xl mb-10 font-light">
+            <p className="font-sans text-sm sm:text-base md:text-lg lg:text-xl text-neutral-200/90 leading-relaxed max-w-2xl mb-8 sm:mb-10 font-light [text-wrap:pretty]">
               {HERO_CONTENT.description}
             </p>
 
             {/* Action CTAs */}
-            <div className="flex flex-wrap items-center gap-4 sm:gap-6 mb-14">
-              <CommercialCTA size="lg">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3.5 sm:gap-6 mb-10 sm:mb-14">
+              <CommercialCTA size="lg" className="w-full sm:w-auto">
                 {HERO_CONTENT.ctaPrimary.toUpperCase()}
               </CommercialCTA>
 
               <Link
                 to="/atuacao"
-                className="inline-flex items-center justify-center px-8 py-4 text-xs font-sans font-semibold uppercase tracking-[0.16em] text-white bg-black/30 hover:bg-white/10 border border-white/25 hover:border-white transition-all duration-300 rounded-[2px] backdrop-blur-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                className="inline-flex items-center justify-center w-full sm:w-auto px-7 sm:px-8 py-3.5 sm:py-4 text-xs font-sans font-semibold uppercase tracking-[0.16em] text-white bg-black/30 hover:bg-white/10 border border-white/25 hover:border-white transition-all duration-300 rounded-[2px] backdrop-blur-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white min-h-[48px]"
               >
                 {HERO_CONTENT.ctaSecondary.toUpperCase()}
               </Link>
             </div>
 
             {/* Bottom Complementary Elements & Signature */}
-            <div className="pt-8 border-t border-white/15">
-              <div className="flex flex-wrap items-center gap-6 sm:gap-8 text-xs font-sans font-medium text-neutral-300 uppercase tracking-widest">
+            <div className="pt-6 sm:pt-8 border-t border-white/15">
+              <div className="flex flex-wrap items-center gap-4 sm:gap-8 text-[11px] sm:text-xs font-sans font-medium text-neutral-300 uppercase tracking-widest">
                 {HERO_CONTENT.complementaryElements.map((item, idx) => (
-                  <div key={item} className="flex items-center gap-2.5">
+                  <div key={item} className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#DFBD69]" />
                     <span>{item}</span>
                     {idx < HERO_CONTENT.complementaryElements.length - 1 && (
@@ -85,7 +85,7 @@ export const HomePage: React.FC = () => {
                 ))}
               </div>
 
-              <div className="mt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[11px] font-sans text-neutral-400 tracking-[0.24em] uppercase">
+              <div className="mt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[10px] sm:text-[11px] font-sans text-neutral-400 tracking-[0.18em] sm:tracking-[0.24em] uppercase">
                 <span>{HERO_CONTENT.signature}</span>
                 <span className="text-[10px] text-neutral-500 font-mono tracking-wider flex items-center gap-1.5">
                   <Compass className="w-3 h-3 text-[#DFBD69]" />

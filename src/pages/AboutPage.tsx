@@ -125,14 +125,14 @@ export const AboutPage: React.FC = () => {
             </div>
 
             <div className="lg:col-span-5">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 {PURPOSE_CONTENT.elements.map((elem) => (
                   <div 
                     key={elem}
-                    className="p-8 bg-neutral-900/80 border border-white/10 rounded-[2px] flex flex-col justify-center items-center text-center hover:border-[#DFBD69] transition-colors group"
+                    className="p-5 sm:p-8 bg-neutral-900/80 border border-white/10 rounded-[2px] flex flex-col justify-center items-center text-center hover:border-[#DFBD69] transition-colors group"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#DFBD69] mb-4 group-hover:scale-125 transition-transform" />
-                    <span className="font-serif text-lg sm:text-xl font-medium tracking-[0.16em] text-white">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#DFBD69] mb-3 sm:mb-4 group-hover:scale-125 transition-transform" />
+                    <span className="font-serif text-base sm:text-lg md:text-xl font-medium tracking-[0.14em] sm:tracking-[0.16em] text-white">
                       {elem}
                     </span>
                   </div>

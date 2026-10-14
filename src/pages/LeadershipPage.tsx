@@ -79,18 +79,20 @@ export const LeadershipPage: React.FC = () => {
           </div>
 
           {/* 3 Executive Profiles Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
             {LEADERSHIP_CONTENT.executives.map((exec, idx) => {
               const photoInfo = PARTNER_PHOTOS[exec.name];
 
               return (
                 <div 
                   key={exec.name}
-                  className="bg-neutral-900/70 border border-white/10 rounded-[2px] p-7 sm:p-9 flex flex-col justify-between shadow-2xl hover:border-[#DFBD69] transition-all group backdrop-blur-sm"
+                  className={`bg-neutral-900/70 border border-white/10 rounded-[2px] p-6 sm:p-8 lg:p-9 flex flex-col justify-between shadow-2xl hover:border-[#DFBD69] transition-all group backdrop-blur-sm ${
+                    idx === 2 ? 'md:col-span-2 lg:col-span-1 md:max-w-md md:mx-auto lg:max-w-none lg:mx-0 w-full' : ''
+                  }`}
                 >
                   <div>
                     {/* Top Meta Line with Gold Partner Index */}
-                    <div className="flex items-center justify-between mb-5 pb-3 border-b border-white/10">
+                    <div className="flex items-center justify-between mb-4 sm:mb-5 pb-3 border-b border-white/10">
                       <span className="text-[10.5px] font-mono font-medium tracking-[0.22em] text-[#DFBD69]">
                         SÓCIO 0{idx + 1}
                       </span>
@@ -100,7 +102,7 @@ export const LeadershipPage: React.FC = () => {
                     </div>
 
                     {/* Official Executive Photography Frame */}
-                    <div className="relative w-full aspect-[4/4.8] rounded-[2px] overflow-hidden mb-7 bg-neutral-900 border border-white/15 group-hover:border-[#DFBD69]/70 transition-all duration-300 shadow-xl">
+                    <div className="relative w-full aspect-[4/4.8] rounded-[2px] overflow-hidden mb-6 sm:mb-7 bg-neutral-900 border border-white/15 group-hover:border-[#DFBD69]/70 transition-all duration-300 shadow-xl">
                       {photoInfo ? (
                         <img
                           src={photoInfo.src}
@@ -152,7 +154,7 @@ export const LeadershipPage: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="mt-10 pt-5 border-t border-white/10 text-[10px] font-mono text-neutral-400 uppercase tracking-widest">
+                  <div className="mt-8 sm:mt-10 pt-5 border-t border-white/10 text-[10px] font-mono text-neutral-400 uppercase tracking-widest">
                     8C INVEST · CORPO DIRETIVO OFICIAL
                   </div>
                 </div>

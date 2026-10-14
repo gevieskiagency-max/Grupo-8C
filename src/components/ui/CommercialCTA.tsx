@@ -22,15 +22,15 @@ export const CommercialCTA: React.FC<CommercialCTAProps> = ({
   ariaLabel,
 }) => {
   const baseClasses =
-    'inline-flex items-center justify-center gap-2.5 font-sans font-semibold uppercase tracking-[0.16em] transition-all duration-300 rounded-[2px] cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2';
+    'inline-flex items-center justify-center gap-2.5 font-sans font-semibold uppercase tracking-[0.16em] transition-all duration-300 rounded-[2px] cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 active:scale-[0.98]';
 
   let sizeClasses = '';
   if (size === 'sm') {
-    sizeClasses = 'px-5 py-2.5 text-[11px]';
+    sizeClasses = 'px-5 py-2.5 text-[11px] min-h-[44px]';
   } else if (size === 'lg') {
-    sizeClasses = 'px-9 py-4 text-xs';
+    sizeClasses = 'px-7 sm:px-9 py-3.5 sm:py-4 text-xs sm:text-[12.5px] min-h-[48px]';
   } else {
-    sizeClasses = 'px-8 py-3.5 text-xs';
+    sizeClasses = 'px-6 sm:px-8 py-3 sm:py-3.5 text-xs min-h-[44px]';
   }
 
   let variantClasses = '';

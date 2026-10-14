@@ -61,7 +61,7 @@ export const PageHero: React.FC<PageHeroProps> = ({
       </div>
 
       {/* 3. Typography Content Container - Vertically Centered with Luxury Breathing Space */}
-      <div className="relative z-10 max-w-7xl w-full mx-auto px-6 lg:px-12 py-6 sm:py-10">
+      <div className="relative z-10 max-w-7xl w-full mx-auto px-5 sm:px-6 lg:px-12 py-6 sm:py-10">
         <div className="relative max-w-3xl">
           {/* Subtle diffused contrast halo behind typography — no visible box, perfectly seamless */}
           <div 
@@ -72,10 +72,10 @@ export const PageHero: React.FC<PageHeroProps> = ({
           />
 
           {/* Eyebrow & Badge */}
-          <div className="inline-flex items-center gap-3 mb-6 px-3.5 py-1.5 rounded-[2px] bg-black/50 backdrop-blur-md border border-white/15 drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">
-            <span className="w-4 h-[1.5px]" style={{ backgroundColor: accentColor }} />
+          <div className="inline-flex items-center gap-2.5 sm:gap-3 mb-5 sm:mb-6 px-3 py-1.5 sm:px-3.5 rounded-[2px] bg-black/50 backdrop-blur-md border border-white/15 drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">
+            <span className="w-3.5 sm:w-4 h-[1.5px]" style={{ backgroundColor: accentColor }} />
             <span 
-              className="text-[10.5px] font-sans font-semibold tracking-[0.24em] uppercase"
+              className="text-[9.5px] sm:text-[10.5px] font-sans font-semibold tracking-[0.2em] sm:tracking-[0.24em] uppercase"
               style={{ color: accentColor }}
             >
               {eyebrow}
@@ -83,7 +83,7 @@ export const PageHero: React.FC<PageHeroProps> = ({
             {badge && (
               <>
                 <span aria-hidden="true" className="text-white/30 text-xs">·</span>
-                <span className="text-[10px] font-sans text-neutral-300 uppercase tracking-[0.18em]">
+                <span className="text-[9px] sm:text-[10px] font-sans text-neutral-300 uppercase tracking-[0.16em] sm:tracking-[0.18em]">
                   {badge}
                 </span>
               </>
@@ -91,13 +91,13 @@ export const PageHero: React.FC<PageHeroProps> = ({
           </div>
 
           {/* Main Editorial Headline with refined subtle drop shadow */}
-          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-[66px] font-medium leading-[1.06] tracking-tight text-white mb-6 [text-wrap:balance] drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]">
+          <h1 className="font-serif text-[28px] xs:text-3xl sm:text-5xl md:text-6xl lg:text-[66px] font-medium leading-[1.08] sm:leading-[1.06] tracking-tight text-white mb-5 sm:mb-6 [text-wrap:balance] drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]">
             {title}
           </h1>
 
           {/* Subtitle / Lead Paragraph with subtle readability shadow */}
           {subtitle && (
-            <p className="font-sans text-base sm:text-lg lg:text-xl text-neutral-200 leading-relaxed font-light max-w-2xl [text-wrap:pretty] drop-shadow-[0_1px_6px_rgba(0,0,0,0.85)]">
+            <p className="font-sans text-sm sm:text-base md:text-lg lg:text-xl text-neutral-200 leading-relaxed font-light max-w-2xl [text-wrap:pretty] drop-shadow-[0_1px_6px_rgba(0,0,0,0.85)]">
               {subtitle}
             </p>
           )}

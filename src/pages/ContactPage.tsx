@@ -125,7 +125,7 @@ export const ContactPage: React.FC = () => {
                     </div>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
                     <div>
                       <label className="block text-[11px] font-sans font-semibold tracking-[0.16em] text-neutral-400 uppercase mb-2">
                         Seu Nome
@@ -133,10 +133,11 @@ export const ContactPage: React.FC = () => {
                       <input
                         type="text"
                         required
+                        autoComplete="name"
                         value={formData.nome}
                         onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
                         placeholder="Ex: Roberto Silva"
-                        className="w-full px-4 py-3.5 bg-black/60 border border-white/10 rounded-[2px] text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-[#DFBD69] transition-colors"
+                        className="w-full px-4 py-3 sm:py-3.5 bg-black/60 border border-white/10 rounded-[2px] text-base sm:text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-[#DFBD69] transition-colors min-h-[48px]"
                       />
                     </div>
 
@@ -147,10 +148,11 @@ export const ContactPage: React.FC = () => {
                       <input
                         type="text"
                         required
+                        autoComplete="organization"
                         value={formData.empresa}
                         onChange={(e) => setFormData({ ...formData, empresa: e.target.value })}
                         placeholder="Ex: Grupo Industrial S.A."
-                        className="w-full px-4 py-3.5 bg-black/60 border border-white/10 rounded-[2px] text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-[#DFBD69] transition-colors"
+                        className="w-full px-4 py-3 sm:py-3.5 bg-black/60 border border-white/10 rounded-[2px] text-base sm:text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-[#DFBD69] transition-colors min-h-[48px]"
                       />
                     </div>
 
@@ -161,10 +163,12 @@ export const ContactPage: React.FC = () => {
                       <input
                         type="email"
                         required
+                        inputMode="email"
+                        autoComplete="email"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="roberto@empresa.com.br"
-                        className="w-full px-4 py-3.5 bg-black/60 border border-white/10 rounded-[2px] text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-[#DFBD69] transition-colors"
+                        className="w-full px-4 py-3 sm:py-3.5 bg-black/60 border border-white/10 rounded-[2px] text-base sm:text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-[#DFBD69] transition-colors min-h-[48px]"
                       />
                     </div>
 
@@ -178,13 +182,13 @@ export const ContactPage: React.FC = () => {
                         value={formData.mensagem}
                         onChange={(e) => setFormData({ ...formData, mensagem: e.target.value })}
                         placeholder="Descreva brevemente o momento da empresa (estruturação, expansão, capital)..."
-                        className="w-full px-4 py-3.5 bg-black/60 border border-white/10 rounded-[2px] text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-[#DFBD69] transition-colors resize-none"
+                        className="w-full px-4 py-3 sm:py-3.5 bg-black/60 border border-white/10 rounded-[2px] text-base sm:text-sm text-white placeholder-neutral-600 focus:outline-none focus:border-[#DFBD69] transition-colors resize-none min-h-[96px]"
                       />
                     </div>
 
                     <button
                       type="submit"
-                      className="w-full py-4 px-6 text-xs font-sans font-semibold uppercase tracking-[0.16em] text-white bg-neutral-800 hover:bg-neutral-700 border border-white/15 transition-all rounded-[2px] flex items-center justify-center gap-2.5 hover:border-[#DFBD69]"
+                      className="w-full py-4 px-6 text-xs font-sans font-semibold uppercase tracking-[0.16em] text-white bg-neutral-800 hover:bg-neutral-700 border border-white/15 transition-all rounded-[2px] flex items-center justify-center gap-2.5 hover:border-[#DFBD69] min-h-[48px] cursor-pointer active:scale-[0.99]"
                     >
                       <span>Transmitir Consulta Executiva</span>
                       <ArrowRight className="w-3.5 h-3.5" />

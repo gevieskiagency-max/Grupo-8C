@@ -10,11 +10,24 @@
   --color-brand-muted: #6B7280;
 }
 
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 body {
   font-family: var(--font-sans);
   color: #111315;
   background-color: #FAF9F6;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Eliminate tap delay and unwanted flash on mobile touch screens */
+a, button, input, textarea, select {
+  -webkit-tap-highlight-color: transparent;
 }
 
 .font-serif {
