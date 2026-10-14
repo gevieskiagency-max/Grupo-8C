@@ -23,6 +23,7 @@ export const AboutPage: React.FC = () => {
         subtitle="A 8C Invest atua na estruturação, transformação e valorização de empresas, integrando capital, estratégia, governança e gestão para transformar desafios empresariais em oportunidades concretas de crescimento."
         backgroundImage={monumentalArchImg}
         imageAlt="8C Inve$t - Arquitetura Monumental de Governança e Gestão"
+        imagePosition="object-right lg:object-[75%_center]"
       />
 
       {/* 2. Sobre a 8C - Editorial Authority Section */}

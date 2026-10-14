@@ -1,5 +1,32 @@
 import React from 'react';
 import { LEADERSHIP_CONTENT } from '../data/content';
+import photoCezar from '../assets/images/FOTO_CEZAR.png';
+import photoLuiz from '../assets/images/FOTO_LUIZ.png';
+import photoHeber from '../assets/images/FOTO_HEBER.png';
+
+interface ExecutivePhotoInfo {
+  src: string;
+  alt: string;
+  position: string;
+}
+
+const PARTNER_PHOTOS: Record<string, ExecutivePhotoInfo> = {
+  'CÉZAR': {
+    src: photoCezar,
+    alt: 'Cézar — Presidente da 8C Inve$t',
+    position: 'object-[center_top]',
+  },
+  'LUIZ FERNANDO': {
+    src: photoLuiz,
+    alt: 'Luiz Fernando — Sócio Diretor da 8C Inve$t',
+    position: 'object-[center_top]',
+  },
+  'HEBER SANCHES': {
+    src: photoHeber,
+    alt: 'Heber Sanches — Sócio Diretor da 8C Inve$t',
+    position: 'object-[center_top]',
+  },
+};
 
 export const LeadershipSection: React.FC = () => {
   return (
@@ -33,23 +60,42 @@ export const LeadershipSection: React.FC = () => {
 
         {/* 3 Executive Profiles */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
-          {LEADERSHIP_CONTENT.executives.map((exec, idx) => (
-            <div 
-              key={exec.name}
-              className="bg-[#F9F8F5] border border-[#E5E3DC] rounded-[2px] p-8 sm:p-10 flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:border-[#DFBD69] transition-all group"
-            >
-              <div>
-                {/* Monogram / Header with Gold Rim */}
-                <div className="flex items-center justify-between mb-8 pb-6 border-b border-[#E5E3DC]">
-                  <div className="w-14 h-14 rounded-[2px] bg-white border border-[#DFBD69]/40 flex items-center justify-center shadow-xs group-hover:border-[#DFBD69] transition-colors">
-                    <span className="font-serif font-bold text-base tracking-widest bg-gradient-to-r from-[#C29B38] to-[#DFBD69] bg-clip-text text-transparent">
-                      {exec.initials}
+          {LEADERSHIP_CONTENT.executives.map((exec, idx) => {
+            const photoInfo = PARTNER_PHOTOS[exec.name];
+
+            return (
+              <div 
+                key={exec.name}
+                className="bg-[#F9F8F5] border border-[#E5E3DC] rounded-[2px] p-7 sm:p-9 flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:border-[#DFBD69] transition-all group"
+              >
+                <div>
+                  {/* Top Meta Line with Partner Index */}
+                  <div className="flex items-center justify-between mb-5 pb-3 border-b border-[#E5E3DC]">
+                    <span className="text-[10.5px] font-mono font-medium tracking-[0.22em] text-[#B08A33]">
+                      SÓCIO 0{idx + 1}
+                    </span>
+                    <span className="text-[10px] font-sans tracking-[0.2em] text-neutral-400 uppercase">
+                      8C INVE$T
                     </span>
                   </div>
-                  <span className="text-[11px] font-mono text-neutral-400">
-                    SÓCIO 0{idx + 1}
-                  </span>
-                </div>
+
+                  {/* Official Executive Photography Frame */}
+                  <div className="relative w-full aspect-[4/4.8] rounded-[2px] overflow-hidden mb-7 bg-white border border-[#E5E3DC] group-hover:border-[#DFBD69] transition-all duration-300 shadow-sm">
+                    {photoInfo ? (
+                      <img
+                        src={photoInfo.src}
+                        alt={photoInfo.alt}
+                        className={`w-full h-full object-cover ${photoInfo.position} scale-100 group-hover:scale-[1.02] transition-transform duration-500 ease-out`}
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-neutral-100 text-[#B08A33] font-serif text-3xl">
+                        {exec.initials}
+                      </div>
+                    )}
+                    <div className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-black/25 to-transparent pointer-events-none" />
+                    <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-[#DFBD69]/60 to-transparent group-hover:via-[#DFBD69] transition-colors" />
+                  </div>
 
                 {/* Role */}
                 {exec.role && (
@@ -84,11 +130,12 @@ export const LeadershipSection: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mt-10 pt-5 border-t border-[#E5E3DC] text-[10px] font-mono text-neutral-400 uppercase tracking-widest">
-                8C INVEST · CORPO DIRETIVO OFICIAL
+                <div className="mt-10 pt-5 border-t border-[#E5E3DC] text-[10px] font-mono text-neutral-400 uppercase tracking-widest">
+                  8C INVEST · CORPO DIRETIVO OFICIAL
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
       </div>

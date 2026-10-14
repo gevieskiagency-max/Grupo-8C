@@ -26,6 +26,7 @@ export const AzaPartnersPage: React.FC = () => {
         subtitle="Conectando empresas a uma rede global de capital institucional, advisory em transações complexas e expansão internacional."
         backgroundImage={hubsImage}
         imageAlt="Aliança Global 8C Inve$t & AZA Partners - Conexões Globais Sob Luz Dourada"
+        imagePosition="object-right lg:object-[82%_center]"
       />
 
       {/* 2. Strategic Operations Scope */}

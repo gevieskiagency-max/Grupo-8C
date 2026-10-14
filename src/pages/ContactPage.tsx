@@ -38,6 +38,7 @@ export const ContactPage: React.FC = () => {
         subtitle="Capital, estratégia, governança e gestão trabalhando juntos para construir empresas mais fortes e gerar valor."
         backgroundImage={heroBackground}
         imageAlt="8C Inve$t - Contato Institucional e Relações Executivas"
+        imagePosition="object-right lg:object-[80%_center]"
       />
 
       {/* 2. Direct Executive Contact Section */}

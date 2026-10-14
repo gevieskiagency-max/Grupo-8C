@@ -4,6 +4,33 @@ import { PageHero } from '../components/layout/PageHero';
 import { LEADERSHIP_CONTENT } from '../data/content';
 import { CommercialCTA } from '../components/ui/CommercialCTA';
 import monumentalImg from '../assets/images/monumental_graphite_architecture_1791438157720.jpg';
+import photoCezar from '../assets/images/FOTO_CEZAR.png';
+import photoLuiz from '../assets/images/FOTO_LUIZ.png';
+import photoHeber from '../assets/images/FOTO_HEBER.png';
+
+interface ExecutivePhotoInfo {
+  src: string;
+  alt: string;
+  position: string;
+}
+
+const PARTNER_PHOTOS: Record<string, ExecutivePhotoInfo> = {
+  'CÉZAR': {
+    src: photoCezar,
+    alt: 'Cézar — Presidente da 8C Inve$t',
+    position: 'object-[center_top]',
+  },
+  'LUIZ FERNANDO': {
+    src: photoLuiz,
+    alt: 'Luiz Fernando — Sócio Diretor da 8C Inve$t',
+    position: 'object-[center_top]',
+  },
+  'HEBER SANCHES': {
+    src: photoHeber,
+    alt: 'Heber Sanches — Sócio Diretor da 8C Inve$t',
+    position: 'object-[center_top]',
+  },
+};
 
 export const LeadershipPage: React.FC = () => {
   return (
@@ -23,6 +50,7 @@ export const LeadershipPage: React.FC = () => {
         subtitle="Liderança sênior presente em todas as fases do processo de diagnóstico, estruturação, governança e alocação de recursos."
         backgroundImage={monumentalImg}
         imageAlt="8C Inve$t - Corpo Diretivo e Tomada de Decisão Colegiada"
+        imagePosition="object-right lg:object-[80%_center]"
       />
 
       {/* 2. Executive Profiles */}
@@ -52,62 +80,84 @@ export const LeadershipPage: React.FC = () => {
 
           {/* 3 Executive Profiles Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
-            {LEADERSHIP_CONTENT.executives.map((exec, idx) => (
-              <div 
-                key={exec.name}
-                className="bg-neutral-900/70 border border-white/10 rounded-[2px] p-8 sm:p-10 flex flex-col justify-between shadow-2xl hover:border-[#DFBD69] transition-all group backdrop-blur-sm"
-              >
-                <div>
-                  {/* Monogram / Header with Gold Rim */}
-                  <div className="flex items-center justify-between mb-8 pb-6 border-b border-white/10">
-                    <div className="w-14 h-14 rounded-[2px] bg-[#0B0D0E] border border-[#DFBD69]/40 flex items-center justify-center shadow-xs group-hover:border-[#DFBD69] transition-colors">
-                      <span className="font-serif font-bold text-base tracking-widest bg-gradient-to-r from-[#DFBD69] via-[#F3E3B6] to-[#C29B38] bg-clip-text text-transparent">
-                        {exec.initials}
+            {LEADERSHIP_CONTENT.executives.map((exec, idx) => {
+              const photoInfo = PARTNER_PHOTOS[exec.name];
+
+              return (
+                <div 
+                  key={exec.name}
+                  className="bg-neutral-900/70 border border-white/10 rounded-[2px] p-7 sm:p-9 flex flex-col justify-between shadow-2xl hover:border-[#DFBD69] transition-all group backdrop-blur-sm"
+                >
+                  <div>
+                    {/* Top Meta Line with Gold Partner Index */}
+                    <div className="flex items-center justify-between mb-5 pb-3 border-b border-white/10">
+                      <span className="text-[10.5px] font-mono font-medium tracking-[0.22em] text-[#DFBD69]">
+                        SÓCIO 0{idx + 1}
+                      </span>
+                      <span className="text-[10px] font-sans tracking-[0.2em] text-neutral-400 uppercase">
+                        8C INVE$T
                       </span>
                     </div>
-                    <span className="text-[11px] font-mono text-neutral-400">
-                      SÓCIO 0{idx + 1}
-                    </span>
+
+                    {/* Official Executive Photography Frame */}
+                    <div className="relative w-full aspect-[4/4.8] rounded-[2px] overflow-hidden mb-7 bg-neutral-900 border border-white/15 group-hover:border-[#DFBD69]/70 transition-all duration-300 shadow-xl">
+                      {photoInfo ? (
+                        <img
+                          src={photoInfo.src}
+                          alt={photoInfo.alt}
+                          className={`w-full h-full object-cover ${photoInfo.position} scale-100 group-hover:scale-[1.02] transition-transform duration-500 ease-out`}
+                          loading="lazy"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center bg-neutral-800 text-[#DFBD69] font-serif text-3xl">
+                          {exec.initials}
+                        </div>
+                      )}
+                      {/* Subtle bottom vignette on photo */}
+                      <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-neutral-950/80 via-neutral-950/20 to-transparent pointer-events-none" />
+                      {/* Hairline gold accent on bottom edge */}
+                      <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-[#DFBD69]/50 to-transparent group-hover:via-[#DFBD69] transition-colors" />
+                    </div>
+
+                    {/* Role */}
+                    {exec.role && (
+                      <span className="text-[11px] font-sans font-semibold uppercase tracking-[0.22em] text-[#DFBD69] block mb-1.5">
+                        {exec.role}
+                      </span>
+                    )}
+
+                    {/* Name */}
+                    <h3 className="font-serif text-2xl sm:text-3xl font-medium text-white tracking-tight mb-2">
+                      {exec.name}
+                    </h3>
+
+                    {/* Specialty */}
+                    <p className="font-sans text-xs uppercase tracking-[0.16em] text-neutral-400 font-semibold mb-6">
+                      {exec.specialty}
+                    </p>
+
+                    {/* Areas of Action */}
+                    <div className="pt-6 border-t border-white/10">
+                      <span className="text-[10px] uppercase font-sans font-semibold tracking-[0.22em] text-[#DFBD69] block mb-4">
+                        ÁREAS DE ATUAÇÃO:
+                      </span>
+                      <ul className="space-y-2.5">
+                        {exec.areas.map((area) => (
+                          <li key={area} className="text-xs sm:text-[13px] text-neutral-300 font-sans flex items-center gap-2.5 font-light">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#DFBD69] shrink-0" />
+                            <span>{area}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
 
-                  {/* Role */}
-                  {exec.role && (
-                    <span className="text-[11px] font-sans font-semibold uppercase tracking-[0.2em] text-[#DFBD69] block mb-1.5">
-                      {exec.role}
-                    </span>
-                  )}
-
-                  {/* Name */}
-                  <h3 className="font-serif text-2xl sm:text-3xl font-medium text-white tracking-tight mb-2">
-                    {exec.name}
-                  </h3>
-
-                  {/* Specialty */}
-                  <p className="font-sans text-xs uppercase tracking-[0.16em] text-neutral-400 font-semibold mb-8">
-                    {exec.specialty}
-                  </p>
-
-                  {/* Areas of Action */}
-                  <div className="pt-6 border-t border-white/10">
-                    <span className="text-[10px] uppercase font-sans font-semibold tracking-[0.22em] text-[#DFBD69] block mb-4">
-                      ÁREAS DE ATUAÇÃO:
-                    </span>
-                    <ul className="space-y-2.5">
-                      {exec.areas.map((area) => (
-                        <li key={area} className="text-xs sm:text-[13px] text-neutral-300 font-sans flex items-center gap-2.5 font-light">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#DFBD69] shrink-0" />
-                          <span>{area}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="mt-10 pt-5 border-t border-white/10 text-[10px] font-mono text-neutral-400 uppercase tracking-widest">
+                    8C INVEST · CORPO DIRETIVO OFICIAL
                   </div>
                 </div>
-
-                <div className="mt-10 pt-5 border-t border-white/10 text-[10px] font-mono text-neutral-400 uppercase tracking-widest">
-                  8C INVEST · CORPO DIRETIVO OFICIAL
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           <div className="mt-16 pt-10 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">

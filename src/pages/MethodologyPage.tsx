@@ -23,6 +23,7 @@ export const MethodologyPage: React.FC = () => {
         subtitle="Nossa metodologia começa pela compreensão profunda do negócio e evolui para a construção e implementação das soluções com disciplina e governança."
         backgroundImage={pavilionImg}
         imageAlt="8C Inve$t - Arquitetura de Rigor e Execução Metodológica"
+        imagePosition="object-right lg:object-[80%_center]"
       />
 
       {/* 2. The 8 Principles in Prestigious Two-Column Editorial Layout */}

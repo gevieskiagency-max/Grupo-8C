@@ -4,7 +4,7 @@ import { InstitutionalLayout } from '../app/layouts/InstitutionalLayout';
 import { PageHero } from '../components/layout/PageHero';
 import { PILLARS_CONTENT, SMART_CAPITAL_CONTENT, ALLIANCE_CONTENT } from '../data/content';
 import { CommercialCTA } from '../components/ui/CommercialCTA';
-import pavilionImg from '../assets/images/stone_glass_capital_pavilion_1791438170406.jpg';
+import pavilionImg from '../assets/images/pavilhao_moderno_ao_por_do_sol.png';
 import worldMapImage from '../assets/images/world_connections_map_1791436232769.jpg';
 import azaPanelImage from '../assets/images/conexoes_globais_sob_luz_dourada.png';
 import { ArrowUpRight } from 'lucide-react';
@@ -26,7 +26,8 @@ export const ServicesPage: React.FC = () => {
         }
         subtitle="Integrando capital, estratégia, governança e gestão para transformar desafios empresariais em oportunidades concretas de crescimento e sustentabilidade."
         backgroundImage={pavilionImg}
-        imageAlt="8C Inve$t - Pavilhão de Gestão Estratégica e Capital"
+        imageAlt="8C Inve$t - Pavilhão moderno ao pôr do sol"
+        imagePosition="object-right lg:object-[82%_center]"
       />
 
       {/* 2. Os Quatro Pilares - Editorial Presentation */}

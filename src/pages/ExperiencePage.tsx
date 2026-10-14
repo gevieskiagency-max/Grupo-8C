@@ -37,6 +37,7 @@ export const ExperiencePage: React.FC = () => {
         subtitle="A experiência executiva dos sócios reúne atuação em grandes organizações e projetos, gerando uma visão prática sobre gestão, operação, capital, transformação e crescimento empresarial."
         backgroundImage={archImg}
         imageAlt="8C Inve$t - Trajetória Executiva e Liderança Corporativa"
+        imagePosition="object-right lg:object-[75%_center]"
       />
 
       {/* 2. Frase de Credibilidade dos Sócios */}
