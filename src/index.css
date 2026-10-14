@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Manrope", system-ui, -apple-system, sans-serif;
+  --color-brand-black: #111315;
+  --color-brand-paper: #FAF9F6;
+  --color-brand-cream: #F4F2EC;
+  --color-brand-border: #E5E3DC;
+  --color-brand-muted: #6B7280;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #111315;
+  background-color: #FAF9F6;
+  overflow-x: hidden;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Hairline dividers and luxury borders */
+.border-subtle {
+  border-color: rgba(17, 19, 21, 0.08);
+}
+
+.border-subtle-dark {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Smooth motion respecting reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

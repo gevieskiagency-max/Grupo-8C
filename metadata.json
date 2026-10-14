@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix 8C INVE$T — Capital, Estratégia, Governança e Gestão",
+  "description": "A 8C Invest atua na estruturação, transformação e valorização de empresas, integrando capital, estratégia, governança e gestão para transformar desafios empresariais em oportunidades concretas de crescimento.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
